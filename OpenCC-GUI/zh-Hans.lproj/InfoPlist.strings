@@ -1,0 +1,9 @@
+/* Bundle display name */
+"CFBundleDisplayName" = "OpenCC 繁简转换";
+
+/* Bundle name */
+"CFBundleName" = "OpenCC 繁简转换";
+
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "@ 2022 and onwards The vChewing Project";
+
