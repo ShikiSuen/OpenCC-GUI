@@ -2,8 +2,7 @@
 "CFBundleDisplayName" = "OpenCC Chinese Convert";
 
 /* Bundle name */
-"CFBundleName" = "OpenCC-GUI";
+"CFBundleName" = "OpenCC Chinese Convert";
 
 /* Copyright (human-readable) */
 "NSHumanReadableCopyright" = "@ 2022 and onwards The vChewing Project";
-

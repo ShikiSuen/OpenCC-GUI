@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5B2E270528D21A5000EB212E /* OpenCC-GUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenCC-GUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B2E270528D21A5000EB212E /* OpenCC Chinese Convert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenCC Chinese Convert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2E270828D21A5000EB212E /* OpenCCGUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCCGUIApp.swift; sourceTree = "<group>"; };
 		5B2E270C28D21A5100EB212E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B2E270F28D21A5100EB212E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		5B2E270628D21A5000EB212E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5B2E270528D21A5000EB212E /* OpenCC-GUI.app */,
+				5B2E270528D21A5000EB212E /* OpenCC Chinese Convert.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,9 +106,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5B2E270428D21A5000EB212E /* OpenCC-GUI */ = {
+		5B2E270428D21A5000EB212E /* OpenCC Chinese Convert */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5B2E271428D21A5100EB212E /* Build configuration list for PBXNativeTarget "OpenCC-GUI" */;
+			buildConfigurationList = 5B2E271428D21A5100EB212E /* Build configuration list for PBXNativeTarget "OpenCC Chinese Convert" */;
 			buildPhases = (
 				5B2E270128D21A5000EB212E /* Sources */,
 				5B2E270228D21A5000EB212E /* Frameworks */,
@@ -118,12 +118,12 @@
 			);
 			dependencies = (
 			);
-			name = "OpenCC-GUI";
+			name = "OpenCC Chinese Convert";
 			packageProductDependencies = (
 				5BF2F86528D32EC700F4B599 /* OpenCC */,
 			);
 			productName = "OpenCC-GUI";
-			productReference = 5B2E270528D21A5000EB212E /* OpenCC-GUI.app */;
+			productReference = 5B2E270528D21A5000EB212E /* OpenCC Chinese Convert.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -141,7 +141,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5B2E270028D21A5000EB212E /* Build configuration list for PBXProject "OpenCC-GUI" */;
+			buildConfigurationList = 5B2E270028D21A5000EB212E /* Build configuration list for PBXProject "OpenCC Chinese Convert" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -157,7 +157,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5B2E270428D21A5000EB212E /* OpenCC-GUI */,
+				5B2E270428D21A5000EB212E /* OpenCC Chinese Convert */,
 			);
 		};
 /* End PBXProject section */
@@ -390,7 +390,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5B2E270028D21A5000EB212E /* Build configuration list for PBXProject "OpenCC-GUI" */ = {
+		5B2E270028D21A5000EB212E /* Build configuration list for PBXProject "OpenCC Chinese Convert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B2E271228D21A5100EB212E /* Debug */,
@@ -399,7 +399,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5B2E271428D21A5100EB212E /* Build configuration list for PBXNativeTarget "OpenCC-GUI" */ = {
+		5B2E271428D21A5100EB212E /* Build configuration list for PBXNativeTarget "OpenCC Chinese Convert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B2E271528D21A5100EB212E /* Debug */,
