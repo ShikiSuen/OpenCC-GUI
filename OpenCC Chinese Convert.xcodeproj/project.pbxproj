@@ -13,7 +13,7 @@
 		5B2E271A28D21AC600EB212E /* convdict.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B2E271928D21AC500EB212E /* convdict.plist */; };
 		5B32996828D222110004C5F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B32996628D222110004C5F6 /* InfoPlist.strings */; };
 		5B32996C28D2221E0004C5F6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B32996A28D2221E0004C5F6 /* Localizable.strings */; };
-		5BF2F86628D32EC700F4B599 /* OpenCC in Frameworks */ = {isa = PBXBuildFile; productRef = 5BF2F86528D32EC700F4B599 /* OpenCC */; };
+		BF57A60D2B677B0E00E56CAD /* OpenCC in Frameworks */ = {isa = PBXBuildFile; productRef = BF57A60C2B677B0E00E56CAD /* OpenCC */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,6 @@
 		5B32996D28D2222A0004C5F6 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		5B32996E28D2222A0004C5F6 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5B43BC4928E2E4EB002EE0AA /* PRIVACY_POLICY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PRIVACY_POLICY.md; sourceTree = "<group>"; };
-		5BF2F86328D32E8B00F4B599 /* SwiftyOpenCC */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftyOpenCC; path = ../SwiftyOpenCC; sourceTree = "<group>"; };
 		5BF2F86728D33D7F00F4B599 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BF2F86628D32EC700F4B599 /* OpenCC in Frameworks */,
+				BF57A60D2B677B0E00E56CAD /* OpenCC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +90,6 @@
 		5BF2F86228D32E8B00F4B599 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				5BF2F86328D32E8B00F4B599 /* SwiftyOpenCC */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -120,7 +118,7 @@
 			);
 			name = "OpenCC Chinese Convert";
 			packageProductDependencies = (
-				5BF2F86528D32EC700F4B599 /* OpenCC */,
+				BF57A60C2B677B0E00E56CAD /* OpenCC */,
 			);
 			productName = "OpenCC-GUI";
 			productReference = 5B2E270528D21A5000EB212E /* OpenCC Chinese Convert.app */;
@@ -152,6 +150,7 @@
 			);
 			mainGroup = 5B2E26FC28D21A5000EB212E;
 			packageReferences = (
+				BF57A60B2B677B0E00E56CAD /* XCRemoteSwiftPackageReference "SwiftyOpenCC" */,
 			);
 			productRefGroup = 5B2E270628D21A5000EB212E /* Products */;
 			projectDirPath = "";
@@ -410,9 +409,21 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		BF57A60B2B677B0E00E56CAD /* XCRemoteSwiftPackageReference "SwiftyOpenCC" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ddddxxx/SwiftyOpenCC.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		5BF2F86528D32EC700F4B599 /* OpenCC */ = {
+		BF57A60C2B677B0E00E56CAD /* OpenCC */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = BF57A60B2B677B0E00E56CAD /* XCRemoteSwiftPackageReference "SwiftyOpenCC" */;
 			productName = OpenCC;
 		};
 /* End XCSwiftPackageProductDependency section */
