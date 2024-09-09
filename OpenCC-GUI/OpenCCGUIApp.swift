@@ -57,6 +57,10 @@ struct MainView: View {
       HStack {
         VStack(alignment: .leading) {
           Text("Simplified Chinese")
+          Button("Copy") {
+            NSPasteboard.general.clearContents()
+            NSPasteboard.general.setString(contentCHS, forType: .string)
+          }
           TextEditor(text: $contentCHS).onChange(of: contentCHS) { value in
             contentCHT = converterS2T.convert(value)
           }
@@ -64,6 +68,10 @@ struct MainView: View {
         }
         VStack(alignment: .leading) {
           Text("Traditional Chinese")
+          Button("Copy") {
+            NSPasteboard.general.clearContents()
+            NSPasteboard.general.setString(contentCHT, forType: .string)
+          }
           TextEditor(text: $contentCHT).onChange(of: contentCHT) { value in
             contentCHS = converterT2S.convert(value)
           }
