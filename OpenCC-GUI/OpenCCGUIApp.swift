@@ -28,38 +28,40 @@ struct MainView: View {
 
   var body: some View {
     VStack {
-      HStack {
-        Text("Traditional Variant:")
-        Picker("TPJM", selection: $selVariant) {
-          Text("TPJM").tag(TCVariant.tw)
-          Text("KangXi").tag(TCVariant.kx)
-          Text("TPJM(Idiom)").tag(TCVariant.twidiom)
-          Text("HK").tag(TCVariant.hk)
-        }
-        .labelsHidden()
-        .onChange(of: selVariant) { value in
-          switch value {
-            case TCVariant.kx:
-              converterS2T = try! ChineseConverter(options: [.traditionalize])
-              converterT2S = try! ChineseConverter(options: [.simplify])
-            case TCVariant.twidiom:
-              converterS2T = try! ChineseConverter(options: [.traditionalize, .twStandard, .twIdiom])
-              converterT2S = try! ChineseConverter(options: [.simplify, .twStandard, .twIdiom])
-            case TCVariant.tw:
-              converterS2T = try! ChineseConverter(options: [.traditionalize, .twStandard])
-              converterT2S = try! ChineseConverter(options: [.simplify, .twStandard])
-            case TCVariant.hk:
-              converterS2T = try! ChineseConverter(options: [.traditionalize, .hkStandard])
-              converterT2S = try! ChineseConverter(options: [.simplify, .hkStandard])
-          }
+      Picker("Traditional Variant:", selection: $selVariant) {
+        ForEach(TCVariant.allCases) { tcVariantCase in
+          tcVariantCase.tagTextView
+            .tag(tcVariantCase)
         }
       }
+      .pickerStyle(.segmented)
+      .onChange(of: selVariant) { value in
+        switch value {
+        case TCVariant.kx:
+          converterS2T = try! ChineseConverter(options: [.traditionalize])
+          converterT2S = try! ChineseConverter(options: [.simplify])
+        case TCVariant.twidiom:
+          converterS2T = try! ChineseConverter(options: [.traditionalize, .twStandard, .twIdiom])
+          converterT2S = try! ChineseConverter(options: [.simplify, .twStandard, .twIdiom])
+        case TCVariant.tw:
+          converterS2T = try! ChineseConverter(options: [.traditionalize, .twStandard])
+          converterT2S = try! ChineseConverter(options: [.simplify, .twStandard])
+        case TCVariant.hk:
+          converterS2T = try! ChineseConverter(options: [.traditionalize, .hkStandard])
+          converterT2S = try! ChineseConverter(options: [.simplify, .hkStandard])
+        }
+      }
+      .frame(maxWidth: .infinity, alignment: .leading)
+      Divider()
       HStack {
         VStack(alignment: .leading) {
-          Text("Simplified Chinese")
-          Button("Copy") {
-            NSPasteboard.general.clearContents()
-            NSPasteboard.general.setString(contentCHS, forType: .string)
+          HStack {
+            Text("Simplified Chinese")
+            Button("Copy") {
+              NSPasteboard.general.clearContents()
+              NSPasteboard.general.setString(contentCHS, forType: .string)
+            }
+            Spacer()
           }
           TextEditor(text: $contentCHS).onChange(of: contentCHS) { value in
             contentCHT = converterS2T.convert(value)
@@ -67,10 +69,13 @@ struct MainView: View {
           .font(.system(size: 14))
         }
         VStack(alignment: .leading) {
-          Text("Traditional Chinese")
-          Button("Copy") {
-            NSPasteboard.general.clearContents()
-            NSPasteboard.general.setString(contentCHT, forType: .string)
+          HStack {
+            Text("Traditional Chinese")
+            Button("Copy") {
+              NSPasteboard.general.clearContents()
+              NSPasteboard.general.setString(contentCHT, forType: .string)
+            }
+            Spacer()
           }
           TextEditor(text: $contentCHT).onChange(of: contentCHT) { value in
             contentCHS = converterT2S.convert(value)
@@ -81,7 +86,6 @@ struct MainView: View {
     }
     .frame(minWidth: 640, minHeight: 480)
     .padding()
-    .background(VisualEffectView(material: .sidebar, blendingMode: .behindWindow))
   }
 }
 
@@ -91,32 +95,24 @@ struct ContentView_Previews: PreviewProvider {
   }
 }
 
-enum TCVariant {
+enum TCVariant: String, Hashable, Identifiable, CaseIterable {
   case tw
   case kx
   case twidiom
   case hk
-}
 
-// MARK: - Windows Aero in Swift UI
+  var id: String { rawValue }
 
-// Ref: https://stackoverflow.com/questions/62461957
-
-@available(macOS 10.15, *)
-struct VisualEffectView: NSViewRepresentable {
-  let material: NSVisualEffectView.Material
-  let blendingMode: NSVisualEffectView.BlendingMode
-
-  func makeNSView(context _: Context) -> NSVisualEffectView {
-    let visualEffectView = NSVisualEffectView()
-    visualEffectView.material = material
-    visualEffectView.blendingMode = blendingMode
-    visualEffectView.state = NSVisualEffectView.State.active
-    return visualEffectView
-  }
-
-  func updateNSView(_ visualEffectView: NSVisualEffectView, context _: Context) {
-    visualEffectView.material = material
-    visualEffectView.blendingMode = blendingMode
+  var tagTextView: Text {
+    switch self {
+    case .tw:
+      Text("TPJM")
+    case .kx:
+      Text("KangXi")
+    case .twidiom:
+      Text("TPJM(Idiom)")
+    case .hk:
+      Text("HK")
+    }
   }
 }
