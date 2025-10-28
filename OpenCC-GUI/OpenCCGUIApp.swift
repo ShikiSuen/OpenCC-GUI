@@ -59,6 +59,7 @@ struct MainView: View {
             Text("Simplified Chinese")
             Button("Copy") {
               NSPasteboard.general.clearContents()
+              NSPasteboard.general.declareTypes([.string], owner: nil)
               NSPasteboard.general.setString(contentCHS, forType: .string)
             }
             Spacer()
@@ -73,6 +74,7 @@ struct MainView: View {
             Text("Traditional Chinese")
             Button("Copy") {
               NSPasteboard.general.clearContents()
+              NSPasteboard.general.declareTypes([.string], owner: nil)
               NSPasteboard.general.setString(contentCHT, forType: .string)
             }
             Spacer()
